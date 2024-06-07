@@ -27,6 +27,25 @@ public class Main {
         while ( opcao != 4) {
              System.out.println(menu);
              opcao=leitura.nextInt();
+
+             if (opcao == 1 ){
+                 System.out.println("Seu saldo é de "+ saldo);
+             }else if(opcao==2){
+                 System.out.println("Qual o valor que você deseja transferir?");
+                 double valor = leitura.nextDouble();
+                 if (valor>saldo){
+                     System.out.println("Saldo insuficiente!");
+                 }else{
+                     saldo -= valor;
+                     System.out.println("Valor Transferido!");
+                 }
+            } else if (opcao==3) {
+                 System.out.println("Qual o valor que você deseja receber?");
+                 double valor = leitura.nextDouble();
+                 saldo+=valor;
+             }
+
+
         }
     }
 }
